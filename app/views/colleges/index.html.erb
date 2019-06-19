@@ -1,0 +1,21 @@
+<h1>学院列表</h1>
+
+<table>
+  <tr>
+    <th>学院名</th>
+    <th colspan="3"></th>
+  </tr>
+
+  <% @colleges.each do |college| %>
+    <tr>
+      <td><%= college.name %></td>
+      <td><%= link_to '详情', college_path(college) %></td>
+      <td><%= link_to '编辑', edit_college_path(college) %></td>
+      <td><%= link_to '删除', college_path(college),
+                      method: :delete,
+                      data: { confirm: '确认删除?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to '添加新学院', new_college_path %>
