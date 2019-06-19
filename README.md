@@ -1,24 +1,23 @@
-# README
+# 学生竞赛管理系统
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+竞赛管理系统分为两部分：管理员端和学生端
 
-Things you may want to cover:
+## 管理员端
 
-* Ruby version
+管理员登录，登录后可以进行如下操作
 
-* System dependencies
+1. 管理学院信息
+2. 管理老师信息
+3. 管理学生信息
+4. 管理比赛信息
+5. 管理参赛队伍信息
+6. 管理比赛成果信息
 
-* Configuration
+## 学生端
 
-* Database creation
+学生登录，登录后可以进行如下操作
 
-* Database initialization
+1. 查看比赛信息，同时可以报名参加比赛
+2. 查看或编辑个人信息，可以修改个人信息（修改邮箱、登录密码）
+3. 查看或编辑参赛信息，如果比赛是团队比赛，可以添加队员，同时比赛结束后可以上传比赛结果
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
