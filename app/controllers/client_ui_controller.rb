@@ -20,6 +20,6 @@ class ClientUiController < ApplicationController
     temp_competition_id = params[:id]
     temp_student_id = session[:student_id]
     @group = Group.create(competition_id: temp_competition_id, student_id: temp_student_id)
-    redirect_to "client_group/#{@group.id}"
+    redirect_to client_group_path
   end
 end

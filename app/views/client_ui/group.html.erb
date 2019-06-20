@@ -4,6 +4,7 @@
   <tr>
     <th>比赛名</th>
     <th>队伍名</th>
+    <th>报名时间</th>
     <th>查看详情</th>
   </tr>
 
@@ -11,6 +12,7 @@
     <tr>
       <td><%= group.competition.name %></td>
       <td><%= group.name %></td>
+      <td><%= group.created_at %></td>
       <td><a href="client_group/<%= group.id %>">更多内容</a></td>
     </tr>
   <% end %>
