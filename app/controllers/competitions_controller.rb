@@ -1,6 +1,6 @@
 class CompetitionsController < ApplicationController
   def index
-    @competitions = Competition.all
+    @competitions = Competition.all.order(deadline: :desc)
   end
 
   def show

@@ -38,46 +38,41 @@
           <% elsif session[:student_id] != nil %>
 
             <li class="nav-item active">
-              <a class="nav-link" href="client_competition">比赛列表</a>
+              <a class="nav-link" href="/client_competition">比赛列表</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="client_group">参赛情况</a>
+              <a class="nav-link" href="/client_group">参赛情况</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="client_profile">个人信息</a>
+              <a class="nav-link" href="/client_profile">个人信息</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="client_logout">退出登录</a>
+              <a class="nav-link" href="/client_logout">退出登录</a>
             </li>
-
 
           <% else %>
             <li class="nav-item active">
-              <a class="nav-link" href="colleges">学院管理</a>
+              <a class="nav-link" href="/colleges">学院管理</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="teachers">老师管理</a>
+              <a class="nav-link" href="/teachers">老师管理</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="students">学生管理</a>
+              <a class="nav-link" href="/students">学生管理</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="competitions">比赛管理</a>
+              <a class="nav-link" href="/competitions">比赛管理</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="groups">队伍管理</a>
+              <a class="nav-link" href="/groups">队伍管理</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="achievements">成果管理</a>
+              <a class="nav-link" href="/achievements">成果管理</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="admin_logout">退出登录</a>
+              <a class="nav-link" href="/admin_logout">退出登录</a>
             </li>
-
           <% end %>
-
-
-
         </ul>
       </div>
     </div>

@@ -1,0 +1,40 @@
+<h1>队伍信息</h1>
+<p>
+  <strong>参加比赛：</strong>
+  <%= @group.competition.name %>
+</p>
+
+<p>
+  <strong>队伍名为：</strong>
+  <%= @group.name %>
+</p>
+
+<p>
+  <strong>队员一学号为：</strong>
+  <%= @group.mema %>
+</p>
+
+<p>
+  <strong>队员二学号为：</strong>
+  <%= @group.memb %>
+</p>
+
+<p>
+  <strong>队员三学号为：</strong>
+  <%= @group.memc %>
+</p>
+<p>
+  <strong>队员四学号为：</strong>
+  <%= @group.memd %>
+</p>
+
+<% if @group.achievement != nil %>
+  <p>
+    <strong>获得奖项：</strong>
+    <%= @group.achievement.prize %>
+  </p>
+<% end %>
+
+<a href="/client_group/<%= @group.id %>/edit">编辑队伍信息</a><br>
+<a href="/client_group/<%= @group.id %>/add_achievement">编辑获奖信息</a><br>
+<a href="/client_group">返回参赛列表</a>

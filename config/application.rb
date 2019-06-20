@@ -15,5 +15,10 @@ module CompetitionManagement
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+    config.time_zone = 'Beijing'
+
+    # Store time of magic timestamps columns in local timezone, not UTC.
+    # The default setting is :utc which reset timezone of each database session to UTC.
+    config.active_record.default_timezone = :local
   end
 end

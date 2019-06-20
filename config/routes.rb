@@ -13,7 +13,12 @@ Rails.application.routes.draw do
   get 'client_competition' => 'client_ui#competition'
   get 'client_profile' => 'client_ui#profile'
   get 'client_group' => 'client_ui#group'
-  get 'client_create_group/:id' => 'client_ui#create_group'
+  get 'client_group/:id' => 'client_ui#group_detail'
+  get 'client_group/:id/edit' => 'client_ui#edit_group'
+  post 'client_group/update' => 'client_ui#update_group'
+  get 'client_group/:id/add_achievement' => 'client_ui#add_achievement'
+  post 'client_group/add_achievement' => 'client_ui#group_add_achievement'
+  post 'client_create_group' => 'client_ui#create_group'
 
   resources :colleges
   resources :teachers

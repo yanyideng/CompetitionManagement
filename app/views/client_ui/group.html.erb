@@ -1,0 +1,22 @@
+<h1>目前已参加的比赛</h1>
+<% if flash[:notice] != nil %>
+  <div class="alert alert-success col-lg-offset-4 col-lg-2"><%= flash[:notice] %></div>
+  <% flash[:notice] = nil %>
+<% end %>
+<table>
+  <tr>
+    <th>比赛名</th>
+    <th>队伍名</th>
+    <th>报名时间</th>
+    <th>查看详情</th>
+  </tr>
+
+  <% @groups.each do |group| %>
+    <tr>
+      <td><%= group.competition.name %></td>
+      <td><%= group.name %></td>
+      <td><%= group.created_at %></td>
+      <td><a href="/client_group/<%= group.id %>">更多内容</a></td>
+    </tr>
+  <% end %>
+</table>

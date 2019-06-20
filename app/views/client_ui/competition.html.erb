@@ -1,5 +1,8 @@
 <h1>比赛列表</h1>
-
+<% if flash[:notice] != nil %>
+  <div class="alert alert-danger col-lg-offset-4 col-lg-2"><%= flash[:notice] %></div>
+  <% flash[:notice] = nil %>
+<% end %>
 <table>
   <tr>
     <th>比赛名</th>
@@ -17,13 +20,19 @@
       <td><%= competition.deadline %></td>
       <td><%= competition.endtime %></td>
       <% if @current_date < competition.deadline %>
-        <td>比赛报名中</td>
-        <td><a href="client_create_group/<%= competition.id %>">报名</a></td>
+        <td>报名中</td>
+        <td>
+          <form action="client_create_group" method="post">
+            <input type="hidden" name="id" value="<%= competition.id %>">
+            <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+            <input type="submit" value="报名" />
+          </form>
+        </td>
       <% elsif @current_date < competition.endtime %>
-        <td>比赛进行中</td>
+        <td>进行中</td>
         <td>无法报名</td>
       <% else %>
-        <td>比赛已结束</td>
+        <td>已结束</td>
         <td>无法报名</td>
       <% end %>
     </tr>
