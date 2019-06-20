@@ -1,5 +1,8 @@
 <h1>目前已参加的比赛</h1>
-
+<% if flash[:notice] != nil %>
+  <div class="alert alert-success col-lg-offset-4 col-lg-2"><%= flash[:notice] %></div>
+  <% flash[:notice] = nil %>
+<% end %>
 <table>
   <tr>
     <th>比赛名</th>

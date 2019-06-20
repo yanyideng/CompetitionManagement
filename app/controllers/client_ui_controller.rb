@@ -22,6 +22,7 @@ class ClientUiController < ApplicationController
     @group = Group.where("competition_id = ? AND student_id = ?", temp_competition_id, temp_student_id)
     if @group.empty?
       @group = Group.create(competition_id: temp_competition_id, student_id: temp_student_id)
+      flash[:notice] = '请继续完善队伍信息！'
       redirect_to client_group_path
     else
       flash[:notice] = '请勿重复报名！'
