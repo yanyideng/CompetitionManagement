@@ -11,13 +11,10 @@
 
 <% if session[:admin_id] == nil && session[:student_id] == nil %>
   <% session[:backgroud] = 'bg1' %>
-  <% session[:navi] = 'None' %>
 <% elsif session[:admin_id] != nil %>
   <% session[:backgroud] = 'bg2' %>
-  <% session[:navi] = 'Admin' %>
 <% else %>
   <% session[:backgroud] = 'bg2' %>
-  <% session[:navi] = 'Client' %>
 <% end %>
 
   <body class="<%= session[:backgroud] %>">
@@ -31,9 +28,56 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
+
+          <% if session[:admin_id] == nil && session[:student_id] == nil %>
+
           <li class="nav-item active">
             <a class="nav-link" href="">Please login first</a>
           </li>
+
+          <% elsif session[:student_id] != nil %>
+
+            <li class="nav-item active">
+              <a class="nav-link" href="client_competition">比赛列表</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="client_group">参赛情况</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="client_profile">个人信息</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="client_logout">退出登录</a>
+            </li>
+
+
+          <% else %>
+            <li class="nav-item active">
+              <a class="nav-link" href="colleges">学院管理</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="">老师管理</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="students">学生管理</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="">比赛管理</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="">队伍管理</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="">成果管理</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="admin_logout">退出登录</a>
+            </li>
+
+          <% end %>
+
+
+
         </ul>
       </div>
     </div>

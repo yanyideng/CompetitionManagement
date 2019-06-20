@@ -16,4 +16,9 @@ module ClientSessionsHelper
   def logged_in?
     !current_user.nil?
   end
+
+  def log_out
+    session[:student_id] = nil
+    @current_user = nil
+  end
 end
