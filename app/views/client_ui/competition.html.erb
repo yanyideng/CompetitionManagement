@@ -1,0 +1,31 @@
+<h1>比赛列表</h1>
+
+<table>
+  <tr>
+    <th>比赛名</th>
+    <th>届数</th>
+    <th>报名截止时间</th>
+    <th>比赛结束时间</th>
+    <th>当前状态</th>
+    <th>报名比赛</th>
+  </tr>
+
+  <% @competitions.each do |competition| %>
+    <tr>
+      <td><%= competition.name %></td>
+      <td><%= competition.version %></td>
+      <td><%= competition.deadline %></td>
+      <td><%= competition.endtime %></td>
+      <% if @current_date < competition.deadline %>
+        <td>比赛报名中</td>
+        <td><a href="client_create_group/<%= competition.id %>">报名</a></td>
+      <% elsif @current_date < competition.endtime %>
+        <td>比赛进行中</td>
+        <td>无法报名</td>
+      <% else %>
+        <td>比赛已结束</td>
+        <td>无法报名</td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
