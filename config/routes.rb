@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   post 'admin_login' => 'admin_sessions#create'
   delete 'admin_logout' => 'admin_sessions#destroy'
 
+  get 'client_competition' => 'client_ui#competition'
+  get 'client_profile' => 'client_ui#profile'
+  get 'client_group' => 'client_ui#group'
+
   resources :colleges
   resources :teachers
   resources :students
