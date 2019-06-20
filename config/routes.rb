@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'client_group/:id/edit' => 'client_ui#edit_group'
   post 'client_group/update' => 'client_ui#update_group'
   get 'client_group/:id/add_achievement' => 'client_ui#add_achievement'
+  post 'client_group/add_achievement' => 'client_ui#group_add_achievement'
   post 'client_create_group' => 'client_ui#create_group'
 
   resources :colleges

@@ -1,1 +1,16 @@
-<h1>添加获奖信息</h1>
+<h1>编辑获奖信息</h1>
+<p>
+  <strong>参加比赛：</strong>
+  <%= @group.competition.name %>
+</p>
+<%= form_tag('/client_group/add_achievement', method: "post") do %>
+  <p>
+  <strong>获得奖项：</strong>
+  <%= select_tag(:prize, options_for_select(
+      [['特等奖', '特等奖'], ['一等奖', '一等奖'], ['二等奖', '二等奖'], ['三等奖', '三等奖']]
+      )) %>
+  </p>
+  <%= hidden_field_tag :id, @group.id %>
+  <%= submit_tag("提交") %>
+<% end %>
+<a href="/client_group/<%= @group.id %>">返回队伍详情</a><br>

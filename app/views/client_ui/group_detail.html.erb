@@ -28,6 +28,13 @@
   <%= @group.memd %>
 </p>
 
+<% if @group.achievement != nil %>
+  <p>
+    <strong>获得奖项：</strong>
+    <%= @group.achievement.prize %>
+  </p>
+<% end %>
+
 <a href="/client_group/<%= @group.id %>/edit">编辑队伍信息</a><br>
-<a href="/client_group/<%= @group.id %>/add_achievement">添加获奖信息</a><br>
+<a href="/client_group/<%= @group.id %>/add_achievement">编辑获奖信息</a><br>
 <a href="/client_group">返回参赛列表</a>

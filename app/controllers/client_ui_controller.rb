@@ -47,6 +47,19 @@ class ClientUiController < ApplicationController
     @group.memc = params[:group][:memc]
     @group.memd = params[:group][:memd]
     @group.save
-    redirect_to client_group_path
+    flash[:notice] = '修改队伍信息完成'
+    redirect_to client_group_url
+  end
+
+  def group_add_achievement
+    achi = Achievement.find_by_group_id(params[:id])
+    if achi.nil?
+      Achievement.create(prize: params[:prize], group_id: params[:id])
+    else
+      achi.prize = params[:prize]
+      achi.save
+    end
+    flash[:notice] = '修改获奖信息完成'
+    redirect_to client_group_url
   end
 end
