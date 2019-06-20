@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_19_154934) do
+ActiveRecord::Schema.define(version: 2019_06_19_155825) do
+
+  create_table "achievements", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "group_id"
+    t.string "prize"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_achievements_on_group_id"
+  end
 
   create_table "colleges", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -42,6 +50,15 @@ ActiveRecord::Schema.define(version: 2019_06_19_154934) do
     t.index ["student_id"], name: "index_groups_on_student_id"
   end
 
+  create_table "guide_teachers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "group_id"
+    t.bigint "teacher_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_guide_teachers_on_group_id"
+    t.index ["teacher_id"], name: "index_guide_teachers_on_teacher_id"
+  end
+
   create_table "students", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "student_id"
     t.string "name"
@@ -62,8 +79,11 @@ ActiveRecord::Schema.define(version: 2019_06_19_154934) do
     t.index ["college_id"], name: "index_teachers_on_college_id"
   end
 
+  add_foreign_key "achievements", "groups"
   add_foreign_key "groups", "competitions"
   add_foreign_key "groups", "students"
+  add_foreign_key "guide_teachers", "groups"
+  add_foreign_key "guide_teachers", "teachers"
   add_foreign_key "students", "colleges"
   add_foreign_key "teachers", "colleges"
 end

@@ -1,0 +1,2 @@
+class AchievementController < ApplicationController
+end
