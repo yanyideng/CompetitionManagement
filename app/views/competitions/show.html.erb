@@ -1,0 +1,21 @@
+<p>
+  <strong>比赛名为：</strong>
+  <%= @competition.name %>
+</p>
+
+<p>
+  <strong>比赛届数为：</strong>
+  <%= @competition.version %>
+</p>
+
+<p>
+  <strong>比赛报名截止日期为：</strong>
+  <%= @competition.deadline %>
+</p>
+
+<p>
+  <strong>比赛结束日期为：</strong>
+  <%= @competition.endtime %>
+</p>
+
+<%= link_to '返回比赛列表', competitions_path %>

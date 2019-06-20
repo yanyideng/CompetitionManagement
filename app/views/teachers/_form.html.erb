@@ -1,0 +1,40 @@
+<%= form_for @teacher do |f| %>
+
+  <% if @teacher.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@teacher.errors.count, "error") %> prohibited
+        this teacher from being saved:
+      </h2>
+      <ul>
+        <% @teacher.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :教职工号 %><br>
+    <%= f.text_field :teacher_id %>
+  </p>
+
+  <p>
+    <%= f.label :姓名 %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :所在学院 %><br>
+    <%= f.select(:college_id) do %>
+      <% @colleges.each do |c| %>
+        <%= content_tag(:option, c.name, value: c.id) %>
+      <% end %>
+    <% end %>
+  </p>
+
+  <p>
+    <%= f.submit :提交%>
+  </p>
+
+<% end %>
