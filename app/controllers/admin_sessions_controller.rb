@@ -11,7 +11,7 @@ class AdminSessionsController < ApplicationController
       log_in(admin)
       redirect_to colleges_path
     else
-      flash[:notice] = "Invalid login or password."
+      flash[:notice] = "错误的管理员用户名或密码"
       render 'new'
     end
   end
