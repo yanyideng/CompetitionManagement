@@ -4,12 +4,12 @@ class ClientUiController < ApplicationController
   end
 
   def competition
-    @competitions = Competition.all
+    @competitions = Competition.all.order(deadline: :desc)
     @current_date = Time.now.to_date
   end
 
   def group
-    @groups = Group.where(student_id: session[:student_id])
+    @groups = Group.where(student_id: session[:student_id]).order(created_at: :desc)
   end
 
   def group_detail
