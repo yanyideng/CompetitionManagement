@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for :client_session, url: client_login_url, method: :post do |f| %>
+
+      <%= f.label :学号 %>
+      <%= f.text_field :login, class: "form-control", placeholder: "Input your student ID" %>
+
+      <%= f.label :密码 %>
+      <%= f.password_field :password, class: "form-control" %>
+
+      <%= f.submit "登录", class: "btn-primary" %>
+    <% end %>
+  </div>
+</div>

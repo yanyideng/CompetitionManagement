@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for :admin_session, url: admin_login_url, method: :post do |f| %>
+
+      <%= f.label :管理员用户名 %>
+      <%= f.text_field :login, class: "form-control", placeholder: "Input your admin username" %>
+
+      <%= f.label :密码 %>
+      <%= f.password_field :password, class: "form-control" %>
+
+      <%= f.submit "登录", class: "btn-primary" %>
+    <% end %>
+  </div>
+</div>
