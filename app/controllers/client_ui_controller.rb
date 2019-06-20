@@ -16,6 +16,14 @@ class ClientUiController < ApplicationController
     @group = Group.find_by_id(params[:id])
   end
 
+  def edit_group
+    @group = Group.find_by_id(params[:id])
+  end
+
+  def add_achievement
+    @group = Group.find_by_id(params[:id])
+  end
+
   def create_group
     temp_competition_id = params[:id]
     temp_student_id = session[:student_id]
