@@ -3,6 +3,10 @@
   <strong>参加比赛：</strong>
   <%= @group.competition.name %>
 </p>
+<p>
+  <strong>队伍名为：</strong>
+  <%= @group.name %>
+</p>
 <%= form_tag('/client_group/add_achievement', method: "post") do %>
   <p>
   <strong>获得奖项：</strong>
