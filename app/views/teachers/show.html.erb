@@ -1,0 +1,17 @@
+<p>
+  <strong>教职工号为：</strong>
+  <%= @teacher.teacher_id %>
+</p>
+
+<p>
+  <strong>姓名为：</strong>
+  <%= @teacher.name %>
+</p>
+
+<p>
+  <strong>所在学院为：</strong>
+  <%= @teacher.college.name %>
+</p>
+
+
+<%= link_to '返回教师列表', teachers_path %>

@@ -1,0 +1,26 @@
+<h1>比赛列表</h1>
+
+<table>
+  <tr>
+    <th>比赛名</th>
+    <th>比赛届数</th>
+    <th>比赛报名截止日期</th>
+    <th>比赛结束日期</th>
+  </tr>
+
+  <% @competitions.each do |competition| %>
+    <tr>
+      <td><%= competition.name %></td>
+      <td><%= competition.version %></td>
+      <td><%= competition.deadline %></td>
+      <td><%= competition.endtime %></td>
+      <td><%= link_to '详情', competition_path(competition) %></td>
+      <td><%= link_to '编辑', edit_competition_path(competition) %></td>
+      <td><%= link_to '删除', competition_path(competition),
+                      method: :delete,
+                      data: { confirm: '确认删除?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to '添加新比赛', new_competition_path %>

@@ -1,0 +1,25 @@
+<h1>教师列表</h1>
+
+<table>
+  <tr>
+    <th>教职工号</th>
+    <th>姓名</th>
+    <th>所在学院</th>
+    <th colspan="3"></th>
+  </tr>
+
+  <% @teachers.each do |teacher| %>
+    <tr>
+      <td><%= teacher.teacher_id %></td>
+      <td><%= teacher.name %></td>
+      <td><%= teacher.college.name %></td>
+      <td><%= link_to '详情', teacher_path(teacher) %></td>
+      <td><%= link_to '编辑', edit_teacher_path(teacher) %></td>
+      <td><%= link_to '删除', teacher_path(teacher),
+                      method: :delete,
+                      data: { confirm: '确认删除?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to '添加新教师', new_teacher_path %>
