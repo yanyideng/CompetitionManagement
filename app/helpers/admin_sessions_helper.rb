@@ -16,4 +16,9 @@ module AdminSessionsHelper
   def logged_in?
     !current_user.nil?
   end
+
+  def log_out
+    session[:admin_id] = nil
+    @current_user = nil
+  end
 end

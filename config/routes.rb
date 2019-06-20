@@ -4,11 +4,16 @@ Rails.application.routes.draw do
 
   get 'client_login' => 'client_sessions#new'
   post 'client_login' => 'client_sessions#create'
-  delete 'client_logout' => 'client_sessions#destroy'
+  get 'client_logout' => 'client_sessions#destroy'
 
   get 'admin_login' => 'admin_sessions#new'
   post 'admin_login' => 'admin_sessions#create'
-  delete 'admin_logout' => 'admin_sessions#destroy'
+  get 'admin_logout' => 'admin_sessions#destroy'
+
+  get 'client_competition' => 'client_ui#competition'
+  get 'client_profile' => 'client_ui#profile'
+  get 'client_group' => 'client_ui#group'
+  get 'client_create_group/:id' => 'client_ui#create_group'
 
   resources :colleges
   resources :teachers

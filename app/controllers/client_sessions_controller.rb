@@ -9,7 +9,7 @@ class ClientSessionsController < ApplicationController
     student = Student.find_by_student_id(student_id)
     if student && student.authenticate(password)
       log_in(student)
-      redirect_to colleges_path
+      redirect_to client_profile_path
     else
       flash[:notice] = "错误的学号或密码"
       render 'new'
