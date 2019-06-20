@@ -9,7 +9,37 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+<% if session[:admin_id] == nil && session[:student_id] == nil %>
+  <% session[:backgroud] = 'bg1' %>
+  <% session[:navi] = 'None' %>
+<% elsif session[:admin_id] != nil %>
+  <% session[:backgroud] = 'bg2' %>
+  <% session[:navi] = 'Admin' %>
+<% else %>
+  <% session[:backgroud] = 'bg2' %>
+  <% session[:navi] = 'Client' %>
+<% end %>
+
+  <body class="<%= session[:backgroud] %>">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
+    <div class="container">
+      <h1 class="navbar-item text-white">SCMS</h1>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="">Please login first</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
     <%= yield %>
+
   </body>
 </html>
