@@ -1,0 +1,32 @@
+<p>
+  <strong>获奖队伍为：</strong>
+  <%= @group.name %>
+</p>
+
+<p>
+  <strong>比赛名为：</strong>
+  <%= @competition.name %>
+</p>
+
+<p>
+  <strong>比赛届数为：</strong>
+  <%= @competition.version %>
+</p>
+
+<p>
+  <strong>比赛报名截止日期为：</strong>
+  <%= @competition.deadline %>
+</p>
+
+<p>
+  <strong>比赛结束日期为：</strong>
+  <%= @competition.endtime %>
+</p>
+
+<p>
+  <strong>所获奖项为：</strong>
+  <%= @achievement.prize %>
+</p>
+
+
+<%= link_to '返回奖项列表', achievements_path %>

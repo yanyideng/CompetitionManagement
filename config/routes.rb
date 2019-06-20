@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   resources :teachers
   resources :students
   resources :competitions
+  resources :achievements
+  resources :groups
 
   get 'welcome/index'
   root 'welcome#index'

@@ -1,0 +1,19 @@
+<h1>奖项列表</h1>
+
+<table>
+  <tr>
+    <th>获奖队伍</th>
+    <th>所获奖项</th>
+  </tr>
+
+  <% @achievements.each do |achievement| %>
+    <tr>
+      <td><%= achievement.group_id %></td>
+      <td><%= achievement.prize %></td>
+      <td><%= link_to '详情', achievement_path(achievement) %></td>
+      <td><%= link_to '删除', achievement_path(achievement),
+                      method: :delete,
+                      data: { confirm: '确认删除?' } %></td>
+    </tr>
+  <% end %>
+</table>

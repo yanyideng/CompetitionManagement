@@ -1,0 +1,20 @@
+<h1>队伍管理</h1>
+
+<table>
+  <tr>
+    <th>队伍名</th>
+    <th>队长</th>
+  </tr>
+
+  <% @groups.each do |group| %>
+    <tr>
+      <td><%= group.name %></td>
+      <td><%= group.student.name %></td>
+      <td><%= link_to '详情', group_path(group) %></td>
+      <td><%= link_to '添加指导老师', edit_group_path(group) %></td>
+      <td><%= link_to '删除', group_path(group),
+                      method: :delete,
+                      data: { confirm: '确认删除?' } %></td>
+    </tr>
+  <% end %>
+</table>

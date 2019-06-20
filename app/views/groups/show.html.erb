@@ -1,0 +1,30 @@
+<p>
+  <strong>队伍名：</strong>
+  <%= @group.name %>
+</p>
+
+<p>
+  <strong>队长：</strong>
+  <%= @group.student.name %>
+</p>
+
+<p>
+ <% if @group.isteam %>
+  <strong>其他队员：</strong>
+  <%= @group.mema %><br>
+  <%= @group.memb %><br>
+  <%= @group.memc %><br>
+  <%= @group.memd %><br>
+<% end %>
+</p>
+
+
+<p>
+  <strong>参加的比赛：</strong>
+  <%= @group.competition.name %>
+</p>
+  <strong>指导老师：</strong>
+  <%= @group.guide_teacher.teacher.name %>
+<p>
+
+<%= link_to '返回队伍列表', groups_path %>
