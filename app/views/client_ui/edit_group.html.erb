@@ -1,0 +1,36 @@
+<h1>修改队伍信息</h1>
+<p>
+  <strong>参加比赛：</strong>
+  <%= @group.competition.name %>
+</p>
+<%= form_for @group, url: '/client_group/update',method: 'post' do |f| %>
+  <p>
+    <%= f.label :队伍名 %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :队员一学号 %><br>
+    <%= f.text_field :mema %>
+  </p>
+
+  <p>
+    <%= f.label :队员二学号 %><br>
+    <%= f.text_field :memb %>
+  </p>
+
+  <p>
+    <%= f.label :队员三学号 %><br>
+    <%= f.text_field :memc %>
+  </p>
+  <p>
+    <%= f.label :队员四学号 %><br>
+    <%= f.text_field :memd %>
+  </p>
+  <%= f.hidden_field :id, value: @group.id %>
+
+  <p>
+    <%= f.submit :提交%>
+  </p>
+
+<% end %>

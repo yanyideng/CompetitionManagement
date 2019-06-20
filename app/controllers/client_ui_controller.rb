@@ -37,4 +37,16 @@ class ClientUiController < ApplicationController
       redirect_to client_competition_path
     end
   end
+
+  def update_group
+    #render plain:params[:group].inspect
+    @group = Group.find_by_id(params[:group][:id])
+    @group.name = params[:group][:name]
+    @group.mema = params[:group][:mema]
+    @group.memb = params[:group][:memb]
+    @group.memc = params[:group][:memc]
+    @group.memd = params[:group][:memd]
+    @group.save
+    redirect_to client_group_path
+  end
 end
