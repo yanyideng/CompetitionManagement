@@ -30,7 +30,7 @@ class StudentsController < ApplicationController
   def update
     @student = Student.find(params[:id])
 
-    if @student.update(student_params) && @student.update(colllege_id: params[:student][:college_id])
+    if @student.update(student_params) && @student.update(college_id: params[:student][:college_id])
       redirect_to @student
     else
       render 'edit'
