@@ -19,7 +19,13 @@ class ClientUiController < ApplicationController
   def create_group
     temp_competition_id = params[:id]
     temp_student_id = session[:student_id]
-    @group = Group.create(competition_id: temp_competition_id, student_id: temp_student_id)
-    redirect_to client_group_path
+    @group = Group.where("competition_id = ? AND student_id = ?", temp_competition_id, temp_student_id)
+    if @group.empty?
+      @group = Group.create(competition_id: temp_competition_id, student_id: temp_student_id)
+      redirect_to client_group_path
+    else
+      flash[:notice] = '请勿重复报名！'
+      redirect_to client_competition_path
+    end
   end
 end
