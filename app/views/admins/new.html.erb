@@ -1,0 +1,40 @@
+<h1>创建管理员</h1>
+<%= form_tag("new", method: "post") do %>
+
+  <% if @admin.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@admin.errors.count, "error") %> prohibited
+        this admin from being saved:
+      </h2>
+      <ul>
+        <% @admin.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <% if flash[:notice] != nil %>
+    <%= flash[:notice] %>
+    <% flash[:notice] = nil %>
+  <% end %>
+
+  <p>
+    <%= label_tag :管理员用户名 %><br>
+    <%= text_field_tag :name %>
+  </p>
+
+  <p>
+    <%= label_tag :管理员密码 %><br>
+    <%= password_field_tag :password %>
+  </p>
+
+  <p>
+    <%= label_tag :邀请码 %><br>
+    <%= text_field_tag :code %>
+  </p>
+
+  <p>
+    <%= submit_tag :注册 %>
+  </p>
+<% end %>

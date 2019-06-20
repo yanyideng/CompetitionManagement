@@ -4,7 +4,6 @@ class AdminSessionsController < ApplicationController
   end
 
   def create
-
   end
 
   def destroy
