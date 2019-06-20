@@ -1,0 +1,17 @@
+<h1>目前已参加的比赛</h1>
+
+<table>
+  <tr>
+    <th>比赛名</th>
+    <th>队伍名</th>
+    <th>查看详情</th>
+  </tr>
+
+  <% @groups.each do |group| %>
+    <tr>
+      <td><%= group.competition.name %></td>
+      <td><%= group.name %></td>
+      <td><a href="client_group/<%= group.id %>">更多内容</a></td>
+    </tr>
+  <% end %>
+</table>
