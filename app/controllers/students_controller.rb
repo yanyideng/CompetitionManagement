@@ -20,6 +20,7 @@ class StudentsController < ApplicationController
   def create
     @college = College.find_by_id(params[:student][:college_id])
     @student = @college.students.new(student_params)
+    @colleges = College.all
     if @student.save
       redirect_to @student
     else
@@ -29,6 +30,7 @@ class StudentsController < ApplicationController
 
   def update
     @student = Student.find(params[:id])
+    @colleges = College.all
 
     if @student.update(student_params) && @student.update(college_id: params[:student][:college_id])
       redirect_to @student
