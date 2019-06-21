@@ -26,5 +26,13 @@
   <%= @group.competition.name %>
 </p>
 
+  <% if @teacher != nil %>
+    <p>
+    <strong>指导老师为：</strong>
+    <%= @teacher.name %>
+    </p>
+
+  <% end %>
+
 <%= link_to '返回队伍列表', groups_path %>
 </div>

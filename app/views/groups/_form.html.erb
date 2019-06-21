@@ -1,30 +1,10 @@
-<%= form_for @group do |f| %>
-
-  <% if @group.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@group.errors.count, "error") %> prohibited
-        this group from being saved:
-      </h2>
-      <ul>
-        <% @group.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+<%= form_tag("/groups/#{@group.id}", method: "put") do %>
   <p>
-    <%= f.label :输入指导老师 %><br>
-    <%= f.text_field :name %>
+    <strong>选择指导老师：</strong>
+    <%= select_tag(:teacher_id, options_for_select(
+        @select_array
+    )) %>
   </p>
-
-  <p>
-    <%= f.hidden_field:group_id, :value => @group.id %>
-  </p>
-
-  <p>
-    <%= f.submit :提交%>
-  </p>
-
+  <%= hidden_field_tag :group_id, @group.id %>
+  <%= submit_tag("提交") %>
 <% end %>
