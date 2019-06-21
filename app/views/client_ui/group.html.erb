@@ -1,9 +1,11 @@
+<div style="text-align: center;">
+  <br><br><br>
 <h1>目前已参加的比赛</h1>
 <% if flash[:notice] != nil %>
   <div class="alert alert-success col-lg-offset-4 col-lg-2"><%= flash[:notice] %></div>
   <% flash[:notice] = nil %>
 <% end %>
-<table>
+<table align = "center">
   <tr>
     <th>比赛名</th>
     <th>队伍名</th>
@@ -20,3 +22,4 @@
     </tr>
   <% end %>
 </table>
+</div>

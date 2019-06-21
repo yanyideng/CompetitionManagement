@@ -1,3 +1,5 @@
+<div style="text-align: center;">
+  <br><br><br>
 <p>
   <strong>队伍名：</strong>
   <%= @group.name %>
@@ -9,8 +11,8 @@
 </p>
 
 <p>
- <% if @group.isteam %>
-  <strong>其他队员：</strong>
+ <% if !@group.isteam %>
+   <strong>其他队员：</strong><br>
   <%= @group.mema %><br>
   <%= @group.memb %><br>
   <%= @group.memc %><br>
@@ -23,8 +25,6 @@
   <strong>参加的比赛：</strong>
   <%= @group.competition.name %>
 </p>
-  <strong>指导老师：</strong>
-  <%= @group.guide_teacher.teacher.name %>
-<p>
 
 <%= link_to '返回队伍列表', groups_path %>
+</div>
