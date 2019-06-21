@@ -5,13 +5,17 @@
 
 <table align = "center">
   <tr>
+    <th>参加比赛</th>
+    <th>比赛届数</th>
     <th>获奖队伍</th>
     <th>所获奖项</th>
   </tr>
 
   <% @achievements.each do |achievement| %>
     <tr>
-      <td><%= achievement.group_id %></td>
+      <td><%= achievement.group.competition.name %></td>
+      <td><%= achievement.group.competition.version %></td>
+      <td><%= achievement.group.name %></td>
       <td><%= achievement.prize %></td>
       <td><%= link_to '详情', achievement_path(achievement) %></td>
       <td><%= link_to '删除', achievement_path(achievement),
