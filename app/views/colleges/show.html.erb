@@ -1,9 +1,20 @@
-<div style="text-align: center;">
-  <br><br><br>
-<p>
-  <strong>学院名为：</strong>
-  <%= @college.name %>
-</p>
+<div class="container">
+  <h1 align="center">学院详情</h1>
 
-<%= link_to '返回学院列表', colleges_path %>
+  <table class="table">
+  <tr>
+    <th class="text-right">
+  <strong>学院名为：</strong>
+    </th>
+    <td>
+  <%= @college.name %>
+    </td>
+  </tr>
+  </table>
+
+  <div class="row">
+    <div class="col-md-5"></div>
+    <%= link_to '返回学院列表', colleges_path, class: "btn btn-primary col-md-2" %>
+  </div>
+
 </div>

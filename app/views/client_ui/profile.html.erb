@@ -1,23 +1,44 @@
-<div style="text-align: center;">
-  <br><br><br>
-<h1>个人信息</h1>
-<p>
+<div class="container">
+<h1 align="center">个人信息</h1>
+
+  <table class="table">
+
+  <tr>
+    <th class="text-right">
   <strong>学号为：</strong>
+    </th>
+    <td>
   <%= @student.student_id %>
-</p>
+    </td>
+  </tr>
 
-<p>
+  <tr>
+    <th class="text-right">
   <strong>姓名为：</strong>
+    </th>
+    <td>
   <%= @student.name %>
-</p>
+    </td>
+  </tr>
 
-<p>
+  <tr>
+    <th class="text-right">
   <strong>所在学院为：</strong>
+    </th>
+    <td>
   <%= @student.college.name %>
-</p>
+    </td>
+  </tr>
 
-<p>
+  <tr>
+    <th class="text-right">
   <strong>邮箱为：</strong>
+    </th>
+    <td>
   <%= @student.email %>
-</p>
+    </td>
+  </tr>
+
+  </table>
+
 </div>

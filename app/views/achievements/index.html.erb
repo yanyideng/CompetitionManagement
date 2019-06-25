@@ -1,14 +1,16 @@
-<div style="text-align: center;">
-  <br><br><br>
-<h1>奖项列表</h1>
-</div>
+<div class="container">
 
-<table align = "center">
+  <h1 align="center">
+    奖项列表
+  </h1>
+
+<table class="table table-striped table-bordered">
   <tr>
     <th>参加比赛</th>
     <th>比赛届数</th>
     <th>获奖队伍</th>
     <th>所获奖项</th>
+    <th>管理</th>
   </tr>
 
   <% @achievements.each do |achievement| %>
@@ -17,10 +19,12 @@
       <td><%= achievement.group.competition.version %></td>
       <td><%= achievement.group.name %></td>
       <td><%= achievement.prize %></td>
-      <td><%= link_to '详情', achievement_path(achievement) %></td>
-      <td><%= link_to '删除', achievement_path(achievement),
+      <td><%= link_to '详情', achievement_path(achievement), class: "btn btn-primary" %>
+      <%= link_to '删除', achievement_path(achievement),
                       method: :delete,
-                      data: { confirm: '确认删除?' } %></td>
+                      data: { confirm: '确认删除?' }, class: "btn btn-danger" %>
+      </td>
     </tr>
   <% end %>
 </table>
+</div>

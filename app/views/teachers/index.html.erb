@@ -1,13 +1,20 @@
-<div style="text-align: center;">
-  <br><br><br>
-<h1>教师列表</h1>
-</div>
-<table align = "center">
+<div class="container">
+
+  <h1 align="center">
+    教师列表
+  </h1>
+
+  <div class="row">
+    <div class="col-md-5"></div>
+    <%= link_to '添加新教师', new_teacher_path, class: "btn btn-primary col-md-2" %>
+  </div><br>
+
+<table class="table table-striped table-bordered">
   <tr>
     <th>教职工号</th>
     <th>姓名</th>
     <th>所在学院</th>
-    <th colspan="3"></th>
+    <th>管理</th>
   </tr>
 
   <% @teachers.each do |teacher| %>
@@ -15,14 +22,14 @@
       <td><%= teacher.teacher_id %></td>
       <td><%= teacher.name %></td>
       <td><%= teacher.college.name %></td>
-      <td><%= link_to '详情', teacher_path(teacher) %></td>
-      <td><%= link_to '编辑', edit_teacher_path(teacher) %></td>
-      <td><%= link_to '删除', teacher_path(teacher),
+      <td><%= link_to '详情', teacher_path(teacher), class: "btn btn-primary" %>
+      <%= link_to '编辑', edit_teacher_path(teacher), class: "btn btn-success" %>
+      <%= link_to '删除', teacher_path(teacher),
                       method: :delete,
-                      data: { confirm: '确认删除?' } %></td>
+                      data: { confirm: '确认删除?' }, class: "btn btn-danger" %>
+      </td>
     </tr>
   <% end %>
 </table>
-<div style="text-align: center;">
-<%= link_to '添加新教师', new_teacher_path %>
+
 </div>

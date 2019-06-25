@@ -1,20 +1,38 @@
-<div style="text-align: center;">
-  <br><br><br>
-<p>
+<div class="container">
+  <h1 align="center">教师详情</h1>
+
+  <table class="table">
+<tr>
+  <th class="text-right">
   <strong>教职工号为：</strong>
+  </th>
+  <td>
   <%= @teacher.teacher_id %>
-</p>
+  </td>
+</tr>
 
-<p>
+<tr>
+  <th class="text-right">
   <strong>姓名为：</strong>
+  </th>
+  <td>
   <%= @teacher.name %>
-</p>
+  </td>
+</tr>
 
-<p>
+<tr>
+  <th class="text-right">
   <strong>所在学院为：</strong>
+  </th>
+  <td>
   <%= @teacher.college.name %>
-</p>
+  </td>
+</tr>
+  </table>
 
+<div class="row">
+  <div class="col-md-5"></div>
+<%= link_to '返回教师列表', teachers_path, class: "btn btn-primary col-md-2" %>
+</div>
 
-<%= link_to '返回教师列表', teachers_path %>
 </div>

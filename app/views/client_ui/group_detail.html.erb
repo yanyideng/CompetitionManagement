@@ -1,43 +1,83 @@
-<div style="text-align: center;">
-  <br><br><br>
-<h1>队伍信息</h1>
-<p>
+<div class="container">
+<h1 align="center">队伍信息</h1>
+
+  <table class="table">
+
+  <tr>
+    <th class="text-right">
   <strong>参加比赛：</strong>
+    </th>
+    <td>
   <%= @group.competition.name %>
-</p>
+    </td>
+  </tr>
 
-<p>
+  <tr>
+    <th class="text-right">
   <strong>队伍名为：</strong>
+    </th>
+    <td>
   <%= @group.name %>
-</p>
+    </td>
+  </tr>
 
-<p>
+  <tr>
+    <th class="text-right">
   <strong>队员一学号为：</strong>
+    </th>
+    <td>
   <%= @group.mema %>
-</p>
+    </td>
+  </tr>
 
-<p>
+  <tr>
+    <th class="text-right">
   <strong>队员二学号为：</strong>
+    </th>
+    <td>
   <%= @group.memb %>
-</p>
+    </td>
+  </tr>
 
-<p>
+  <tr>
+    <th class="text-right">
   <strong>队员三学号为：</strong>
+    </th>
+    <td>
   <%= @group.memc %>
-</p>
-<p>
+    </td>
+  </tr>
+
+  <tr>
+    <th class="text-right">
   <strong>队员四学号为：</strong>
+    </th>
+    <td>
   <%= @group.memd %>
-</p>
+    </td>
+  </tr>
+
 
 <% if @group.achievement != nil %>
-  <p>
+    <tr>
+      <th class="text-right">
     <strong>获得奖项：</strong>
+      </th>
+      <td>
     <%= @group.achievement.prize %>
-  </p>
+      </td>
+    </tr>
 <% end %>
 
-<a href="/client_group/<%= @group.id %>/edit">编辑队伍信息</a><br>
-<a href="/client_group/<%= @group.id %>/add_achievement">编辑获奖信息</a><br>
-<a href="/client_group">返回参赛列表</a>
+  </table>
+
+
+  <div class="row">
+    <div class="col-md-4"></div>
+    <a class="btn btn-success" href="/client_group/<%= @group.id %>/edit">编辑队伍信息</a>&nbsp;&nbsp;
+    <a class="btn btn-success" href="/client_group/<%= @group.id %>/add_achievement">编辑获奖信息</a>&nbsp;&nbsp;
+    <a class="btn btn-primary" href="/client_group">返回参赛列表</a>
+  </div>
+
+
 </div>

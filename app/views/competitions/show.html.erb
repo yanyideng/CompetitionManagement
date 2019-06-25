@@ -1,24 +1,48 @@
-<div style="text-align: center;">
-  <br><br><br>
-<p>
+<div class="container">
+  <h1 align="center">比赛详情</h1>
+
+  <table class="table">
+<tr>
+  <th class="text-right">
   <strong>比赛名为：</strong>
+  </th>
+  <td>
   <%= @competition.name %>
-</p>
+  </td>
+</tr>
 
-<p>
+<tr>
+  <th class="text-right">
   <strong>比赛届数为：</strong>
+  </th>
+  <td>
   <%= @competition.version %>
-</p>
+  </td>
+</tr>
 
-<p>
+<tr>
+  <th class="text-right">
   <strong>比赛报名截止日期为：</strong>
+  </th>
+  <td>
   <%= @competition.deadline %>
-</p>
+  </td>
+</tr>
 
-<p>
+<tr>
+  <th class="text-right">
   <strong>比赛结束日期为：</strong>
+  </th>
+  <td>
   <%= @competition.endtime %>
-</p>
+  </td>
+</tr>
 
-<%= link_to '返回比赛列表', competitions_path %>
+  </table>
+
+  <div class="row">
+    <div class="col-md-5"></div>
+    <%= link_to '返回比赛列表', competitions_path, class: "btn btn-primary col-md-2" %>
+  </div>
+
 </div>

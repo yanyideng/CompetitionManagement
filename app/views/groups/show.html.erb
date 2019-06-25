@@ -1,38 +1,68 @@
-<div style="text-align: center;">
-  <br><br><br>
-<p>
+<div class="container">
+  <h1 align="center">队伍详情</h1>
+
+  <table class="table">
+<tr>
+  <th class="text-right">
   <strong>队伍名：</strong>
+  </th>
+  <td>
   <%= @group.name %>
-</p>
+  </td>
+</tr>
 
-<p>
+<tr>
+  <th class="text-right">
   <strong>队长：</strong>
+  </th>
+  <td>
   <%= @group.student.name %>
-</p>
+  </td>
+</tr>
 
-<p>
+
  <% if !@group.isteam %>
-   <strong>其他队员：</strong><br>
-  <%= @group.mema %><br>
-  <%= @group.memb %><br>
-  <%= @group.memc %><br>
-  <%= @group.memd %><br>
+      <tr>
+    <th class="text-right">
+   <strong>其他队员：</strong>
+    </th>
+        <td>
+  <%= @group.mema %>&nbsp;&nbsp;
+  <%= @group.memb %>&nbsp;&nbsp;
+  <%= @group.memc %>&nbsp;&nbsp;
+  <%= @group.memd %>
+        </td>
+      </tr>
 <% end %>
-</p>
 
 
-<p>
+
+<tr>
+  <th class="text-right">
   <strong>参加的比赛：</strong>
+  </th>
+  <td>
   <%= @group.competition.name %>
-</p>
+  </td>
+</tr>
 
   <% if @teacher != nil %>
-    <p>
+    <tr>
+      <th class="text-right">
     <strong>指导老师为：</strong>
+      </th>
+      <td>
     <%= @teacher.name %>
-    </p>
+      </td>
+    </tr>
 
   <% end %>
 
-<%= link_to '返回队伍列表', groups_path %>
+  </table>
+
+  <div class="row">
+    <div class="col-md-5"></div>
+    <%= link_to '返回队伍列表', groups_path, class: "btn btn-primary col-md-2" %>
+  </div>
+
 </div>

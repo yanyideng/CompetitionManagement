@@ -1,35 +1,66 @@
-<div style="text-align: center;">
-  <br><br><br>
-<p>
+<div class="container">
+  <h1 align="center">成果详情</h1>
+
+  <table class="table">
+<tr>
+  <th class="text-right">
   <strong>获奖队伍为：</strong>
+  </th>
+  <td>
   <%= @achievement.group.name %>
-</p>
+  </td>
+</tr>
 
-<p>
+<tr>
+  <th class="text-right">
   <strong>比赛名为：</strong>
+  </th>
+  <td>
   <%= @competition.name %>
-</p>
+  </td>
+</tr>
 
-<p>
+<tr>
+  <th class="text-right">
   <strong>比赛届数为：</strong>
+  </th>
+  <td>
   <%= @competition.version %>
-</p>
+  </td>
+</tr>
 
-<p>
+<tr>
+  <th class="text-right">
   <strong>比赛报名截止日期为：</strong>
+  </th>
+  <td>
   <%= @competition.deadline %>
-</p>
+  </td>
+</tr>
 
-<p>
+<tr>
+  <th class="text-right">
   <strong>比赛结束日期为：</strong>
+  </th>
+  <td>
   <%= @competition.endtime %>
-</p>
+  </td>
+</tr>
 
-<p>
+<tr>
+  <th class="text-right">
   <strong>所获奖项为：</strong>
+  </th>
+  <td>
   <%= @achievement.prize %>
-</p>
+  </td>
+</tr>
 
+  </table>
 
-<%= link_to '返回奖项列表', achievements_path %>
+  <div class="row">
+    <div class="col-md-5"></div>
+    <%= link_to '返回奖项列表', achievements_path, class: "btn btn-primary col-md-2" %>
+  </div>
+
 </div>
