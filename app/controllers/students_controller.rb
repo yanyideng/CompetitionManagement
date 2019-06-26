@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
   before_action :check_admin_login
   def index
-    @students = Student.all
+    @students = Student.all.page(params[:page])
   end
 
   def show

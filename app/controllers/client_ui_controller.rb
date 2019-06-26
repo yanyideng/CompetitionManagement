@@ -5,12 +5,12 @@ class ClientUiController < ApplicationController
   end
 
   def competition
-    @competitions = Competition.all.order(deadline: :desc)
+    @competitions = Competition.all.order(deadline: :desc).page(params[:page]).per(5)
     @current_date = Time.now.to_date
   end
 
   def group
-    @groups = Group.where(student_id: session[:student_id]).order(created_at: :desc)
+    @groups = Group.where(student_id: session[:student_id]).order(created_at: :desc).page(params[:page])
   end
 
   def group_detail

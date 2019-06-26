@@ -10,7 +10,7 @@ class AchievementsController < ApplicationController
     end
     conditions = params.slice(:competition_id, :prize)
     conditions.each { |k, v| conditions.delete(k) if v.empty? }
-    @achievements = Achievement.filter(conditions)
+    @achievements = Achievement.filter(conditions).page(params[:page])
   end
 
   def show

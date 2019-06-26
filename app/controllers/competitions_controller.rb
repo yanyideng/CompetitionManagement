@@ -1,7 +1,7 @@
 class CompetitionsController < ApplicationController
   before_action :check_admin_login
   def index
-    @competitions = Competition.all.order(deadline: :desc)
+    @competitions = Competition.all.order(deadline: :desc).page(params[:page]).per(5)
   end
 
   def show
