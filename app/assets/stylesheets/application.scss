@@ -15,14 +15,14 @@
  */
 @import "bootstrap";
 .bg1 {
-  background: url('background1.jpg') no-repeat center center fixed;
+  background: image_url('background1.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
 }
 .bg2 {
-  background: url('background2.jpg') no-repeat center center fixed;
+  background: image_url('background2.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
