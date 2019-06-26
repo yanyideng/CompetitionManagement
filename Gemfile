@@ -74,3 +74,5 @@ gem 'jquery-rails'
 #分页插件
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
+gem 'sidekiq'
+gem 'redis'

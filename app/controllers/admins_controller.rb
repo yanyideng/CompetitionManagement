@@ -8,10 +8,10 @@ class AdminsController < ApplicationController
     @admin = Admin.new
     @admin.name = params[:name]
     @admin.password = params[:password]
-    if params[:code] == '123' && @admin.save
+    if params[:code] == ENV['ADMIN_CODE'] && @admin.save
         redirect_to root_path
     else
-      if params[:code] != '123'
+      if params[:code] != ENV['ADMIN_CODE']
         flash[:notice] = '邀请码错误'
       end
       render 'new'
