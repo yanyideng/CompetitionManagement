@@ -1,5 +1,6 @@
 class AdminSessionsController < ApplicationController
   include AdminSessionsHelper
+  before_action :check_stu_or_admin_login, only: [:new, :create]
   def new
   end
 

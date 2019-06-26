@@ -1,4 +1,5 @@
 class AchievementsController < ApplicationController
+  before_action :check_admin_login
   def index
     competitions = Competition.all
     @select_array = Array.new

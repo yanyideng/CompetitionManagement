@@ -1,4 +1,5 @@
 class ClientUiController < ApplicationController
+  before_action :check_stu_login
   def profile
     @student = Student.find_by_id(session[:student_id])
   end

@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_action :check_admin_login
   def index
     @groups = Group.all.order(created_at: :desc)
   end

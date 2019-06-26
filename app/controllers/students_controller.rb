@@ -1,4 +1,5 @@
 class StudentsController < ApplicationController
+  before_action :check_admin_login
   def index
     @students = Student.all
   end

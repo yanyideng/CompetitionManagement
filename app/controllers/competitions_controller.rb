@@ -1,4 +1,5 @@
 class CompetitionsController < ApplicationController
+  before_action :check_admin_login
   def index
     @competitions = Competition.all.order(deadline: :desc)
   end
