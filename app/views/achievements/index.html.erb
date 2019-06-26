@@ -1,8 +1,22 @@
 <div class="container">
 
   <h1 align="center">
-    奖项列表
+    成果列表
   </h1>
+  <h4>
+    搜索比赛成果
+  </h4>
+  <%= form_tag achievements_path, method: 'get' do %>
+    <strong>比赛名：</strong>
+    <%= select_tag(:competition_id, options_for_select(
+        @select_array
+    )) %>&nbsp;&nbsp;
+    <strong>成果等级：</strong>
+    <%= select_tag(:prize, options_for_select(
+        [['全部', ''], ['特等奖', '特等奖'], ['一等奖', '一等奖'], ['二等奖', '二等奖'], ['三等奖', '三等奖']]
+    )) %>
+    <%= submit_tag("查询") %>
+  <% end %>
 
 <table class="table table-striped table-bordered">
   <tr>
