@@ -1,5 +1,5 @@
 class College < ApplicationRecord
   has_many :teachers, dependent: :destroy
   has_many :students, dependent: :destroy
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
 end

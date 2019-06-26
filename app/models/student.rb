@@ -4,6 +4,6 @@ class Student < ApplicationRecord
 
   has_secure_password
   validates :password, :length => { :minimum => 5 }
-  validates :student_id, presence: true
+  validates :student_id, presence: true, uniqueness: true
   validates :name, presence: true
 end
