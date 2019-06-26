@@ -1,0 +1,48 @@
+<div class="container">
+  <h1 align="center">修改邮箱信息</h1>
+
+  <% if flash[:notice] != nil %>
+    <div class="row">
+      <div class="col-md-5"></div>
+      <div class="alert alert-danger col-md-2 text-center">
+        <%= flash[:notice] %>
+      </div>
+    </div>
+    <% flash[:notice] = nil %>
+  <% end %>
+  <div class="row">
+    <div class="col-md-5"></div>
+    <div class="col-md-2 text-center">
+    <strong>学号：</strong>
+    <%= @student.student_id %>
+    </div>
+  </div>
+  <%= form_for @student, url: change_email_url, method: 'post' do |f| %>
+
+    <div class="row">
+      <div class="col-md-5"></div>
+      <div class="col-md-2 text-center">
+        <%= f.label :修改邮箱 %><br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5"></div>
+      <div class="col-md-2 text-center">
+        <%= f.email_field :email %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5"></div>
+      <div class="col-md-2 text-center">
+        <%= f.submit :修改%>
+      </div>
+    </div>
+
+  <% end %>
+  <div class="row">
+    <div class="col-md-5"></div>
+    <div class="col-md-2 text-center">
+      <%= link_to '返回个人信息', client_profile_path%>
+    </div>
+  </div>
+</div>

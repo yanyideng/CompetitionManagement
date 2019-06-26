@@ -1,6 +1,16 @@
 <div class="container">
 <h1 align="center">个人信息</h1>
 
+  <% if flash[:notice] != nil %>
+    <div class="row">
+      <div class="col-md-5"></div>
+      <div class="alert alert-success col-md-2 text-center">
+        <%= flash[:notice] %>
+      </div>
+    </div>
+    <% flash[:notice] = nil %>
+  <% end %>
+
   <table class="table">
 
   <tr>
@@ -40,5 +50,11 @@
   </tr>
 
   </table>
+
+  <div class="row">
+    <div class="col-md-5"></div>
+    <%= link_to '修改邮箱', edit_email_path, class: "btn btn-success col-md-1" %>&nbsp;
+    <%= link_to '修改密码', edit_password_path, class: "btn btn-success col-md-1" %>
+  </div>
 
 </div>

@@ -19,6 +19,10 @@ Rails.application.routes.draw do
   get 'client_group/:id/add_achievement' => 'client_ui#add_achievement'
   post 'client_group/add_achievement' => 'client_ui#group_add_achievement'
   post 'client_create_group' => 'client_ui#create_group'
+  get 'edit_email' => 'client_ui#edit_email'
+  post 'change_email' => 'client_ui#change_email'
+  get 'edit_password' => 'client_ui#edit_password'
+  post 'change_password' => 'client_ui#change_password'
 
   resources :colleges
   resources :teachers

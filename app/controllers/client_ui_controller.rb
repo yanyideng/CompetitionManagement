@@ -62,4 +62,44 @@ class ClientUiController < ApplicationController
     flash[:notice] = '修改获奖信息完成'
     redirect_to client_group_url
   end
+
+  def edit_email
+    @student = Student.find(session[:student_id])
+  end
+
+  def change_email
+    email = params[:student][:email]
+    if email.empty?
+      flash[:notice] = '邮箱不能为空'
+      redirect_to edit_email_url and return
+    end
+    student = Student.find(session[:student_id])
+    student.email = email
+    student.save(validate: false)
+    flash[:notice] = '邮箱修改完成'
+    redirect_to client_profile_url
+  end
+
+  def edit_password
+    @student = Student.find(session[:student_id])
+  end
+
+  def change_password
+    old_pass = params[:old_pass]
+    new_pass = params[:new_pass]
+    if (old_pass.size < 5) || (new_pass.size < 5)
+      flash[:notice] = '密码必须大于5位'
+      redirect_to edit_password_url and return
+    end
+    student = Student.find(session[:student_id])
+    if student.authenticate(old_pass)
+      student.password = new_pass
+      student.save
+      flash[:notice] = '密码修改成功'
+      redirect_to client_profile_url
+    else
+      flash[:notice] = '旧密码错误'
+      redirect_to edit_password_url
+    end
+  end
 end
