@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2019_06_20_010537) do
 
-  create_table "achievements", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "achievements", force: :cascade do |t|
     t.bigint "group_id"
     t.string "prize"
     t.datetime "created_at", null: false
@@ -20,20 +23,20 @@ ActiveRecord::Schema.define(version: 2019_06_20_010537) do
     t.index ["group_id"], name: "index_achievements_on_group_id"
   end
 
-  create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "admins", force: :cascade do |t|
     t.string "name"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "colleges", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "colleges", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "competitions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "competitions", force: :cascade do |t|
     t.string "name"
     t.integer "version"
     t.date "deadline"
@@ -42,7 +45,7 @@ ActiveRecord::Schema.define(version: 2019_06_20_010537) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "groups", force: :cascade do |t|
     t.string "name"
     t.string "mema"
     t.string "memb"
@@ -57,7 +60,7 @@ ActiveRecord::Schema.define(version: 2019_06_20_010537) do
     t.index ["student_id"], name: "index_groups_on_student_id"
   end
 
-  create_table "guide_teachers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "guide_teachers", force: :cascade do |t|
     t.bigint "group_id"
     t.bigint "teacher_id"
     t.datetime "created_at", null: false
@@ -66,7 +69,7 @@ ActiveRecord::Schema.define(version: 2019_06_20_010537) do
     t.index ["teacher_id"], name: "index_guide_teachers_on_teacher_id"
   end
 
-  create_table "students", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "students", force: :cascade do |t|
     t.string "student_id"
     t.string "name"
     t.string "email"
@@ -78,7 +81,7 @@ ActiveRecord::Schema.define(version: 2019_06_20_010537) do
     t.index ["student_id"], name: "index_students_on_student_id"
   end
 
-  create_table "teachers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "teachers", force: :cascade do |t|
     t.string "teacher_id"
     t.string "name"
     t.bigint "college_id"
