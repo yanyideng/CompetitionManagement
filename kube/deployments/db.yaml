@@ -37,7 +37,7 @@ spec:
         - name: PGDATA
           value: "/var/lib/postgresql/data"
         image: postgres
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         name: db
         ports:
         - containerPort: 5432
