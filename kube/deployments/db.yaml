@@ -36,7 +36,7 @@ spec:
           value: "rails-app-db"
         - name: PGDATA
           value: "/var/lib/postgresql/data"
-        image: postgres
+        image: registry.cn-hangzhou.aliyuncs.com/yangyi_deng/postgres:latest
         imagePullPolicy: IfNotPresent
         name: db
         ports:
